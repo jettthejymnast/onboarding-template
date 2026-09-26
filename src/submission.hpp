@@ -31,14 +31,15 @@ void apply_stencil(const Grid& old_grid, Grid& new_grid);
 Grid::Grid(std::size_t rows, std::size_t cols) {
     rows_ = rows;
     cols_ = cols;
+    std::vector<double> temp = {};
 
     for (std::size_t y = 0; y < rows; y++) {
-        std::vector<double> temp = {};
 
         for (std::size_t x = 0; x < cols; x++) {
             temp.push_back(0);
         }
         g.push_back(temp);
+        temp.clear();
     }
 }
 
